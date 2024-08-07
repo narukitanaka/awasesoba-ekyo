@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" type="image/png" href="images/fav.png" /> -->
+  <!-- <meta name="robots" content="index, follow"> -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css" >
+  <link rel="stylesheet" type="text/css" href="style.css" >
+
+
+  <!-- googlefont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+  <title>AWSE SOBA from OKINWA</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+</head>
+
+<body>
+
+  <div class="wrap-hidden">
+
+    <div class="head-message"><p>完全会員制　沖縄そば「アワセそば」通販サイト</p></div>
+
+    <header class="header">
+      <div class="header-inner inner">
+        <div class="header-top">
+          <div class="logo img-box colum01"><a href="./"><img src="images/logo02.svg" alt=""></a></div> <!-- /.logo -->
+          <div class="search colum02">
+            <form role="search" method="get" id="searchform" class="searchform" action="#">
+              <div>
+                  <input type="text" value="" name="s" id="s" placeholder="なにをお探しですか？"/>
+                  <input type="image" id="searchsubmit" src="images/search-btn.svg" />
+              </div>
+            </form>
+          </div><!-- /.search -->
+          <div class="colum03">
+            <nav>
+              <ul>
+                <li><a href="#"><img src="images/icon-login.svg" alt="">ログイン</a></li>
+                <li><a href="#"><img src="images/icon-cart.svg" alt="">カート</a></li>
+              </ul>
+            </nav>
+            <div class="lang-btn">言語切り替えボタンが入ります</div>
+          </div>
+        </div><!-- /.header-top -->
+        <div class="header-bottom">
+          <nav>
+            <ul>
+              <li><a href="./">HOME</a></li>
+              <li><a href="archive-product.html">商品一覧</a></li>
+              <li><a href="about.html">アワセそばについて</a></li>
+              <li><a href="guide.html">ご利用案内</a></li>
+              <li><a href="faq.html">よくあるご質問</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div><!-- /.header-bottom -->
+      </div><!-- /.header-inner-->
+    </header>
+
+    <main>
+
+      <div class="flow-btn"><a href="#"></a></div>
+
+      <div class="content-wrap p-under">
+        <!-- <div class="main-asshirai"><div class="img-box"><img src="images/ashirai04.svg" alt=""></div></div> -->
+        <div class="page-common-asshirai"><div class="img-box"><img src="images/ashirai03.svg" alt=""></div></div>
+        <div class="inner content-flex">
+
+          <aside>
+
+            <div class="side-login">
+              <p class="ttl">ログイン</p>
+              <form name="loginform" id="loginform" action="<?php echo wp_login_url(); ?>" method="post">
+                <p class="id">
+                  <label for="user_login">ログインID<br />
+                  <input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>
+                </p>
+                <p class="pass">
+                  <label for="user_pass">パスワード<br />
+                  <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" /></label>
+                </p>
+                <p class="submit">
+                  <input class="btn01" type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="ログイン" />
+                  <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+                </p>
+                <p>
+                  <a href="<?php echo wp_lostpassword_url(); ?>">パスワードをお忘れの方</a>
+                </p>
+              </form>
+            </div><!--side-login-->
+
+            <div class="side-cart">
+              <p class="ttl">カート</p>
+              <div class="box flex">
+                <div class="img-box obj-fit"><img src="images/dummy-item01.jpg" alt=""></div>
+                <p>商品名入りますテキストテキスト</p>
+              </div>
+            </div><!-- /.side-cart -->
+
+            <div class="side-cate">
+              <p>商品カテゴリ</p>
+              <nav>
+                <ul>
+                  <li><a href="archive-product.html">全ての商品</a></li>
+                  <li><a href="archive-product.html">生麺</a></li>
+                  <li><a href="archive-product.html">乾麺</a></li>
+                  <li><a href="archive-product.html">LL麺</a></li>
+                  <li><a href="archive-product.html">だし</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.side-cate -->
+
+            <div class="btn-wrap"><a class="btn02" href="faq.html">よくあるご質問</a></div>
+            <div class="btn-wrap"><a class="btn02" href="about.html">アワセそばについて</a></div>
+
+          </aside>
+
+          <div class="contents p-about">
+
+            <div class="under-mv">
+              <div class="img-box obj-fit">
+                <picture>
+                  <source srcset="images/under-mv_about.jpg" media="(max-width: 769px)">
+                  <img src="images/under-mv_about.jpg" alt="">
+                  <h1>アワセそばについて</h1>
+                </picture>
+              </div>
+            </div><!-- /.under-mv -->
+
+            <section class="p-about_wrap01">
+              <div class="block flex">
+                <div class="left fadeIn">
+                  <div class="img-box obj-fit"><img src="images/p-about_img01.jpg" alt=""></div>
+                </div><!-- /.left -->
+                <div class="right fadeIn">
+                  <h3>1947年創業。沖縄そばの老舗</h3>
+                  <p>
+                    地元のウチナーンチュ(沖縄人)はもちろん、観光客、基地内のアメリカ人たちに親しまれている「アワセそば」。<br>
+                    今では沖縄そばのブランドの一つとしての地位を築いています。<br>
+                    1947年の創業以来麺一筋で製造を行ってきた「(有)アワセそば＜製麺工場＞」の沖縄そばは、伝統の特殊な手作り製法によって作られています。<br>
+                    <br>
+                    また、近年特に人気があるのは「沖縄ソーキそば(生麺)」で、沖縄そば生麺・本格レトルトソーキ・粉末だしがセットになったこの商品は、那覇の物産展の優秀賞や沖縄市産業まつりで沖縄市長賞を取るなど、多くの賞を受賞している商品でもあります。
+                  </p>
+                </div><!-- /.right -->
+              </div><!-- /.block -->
+              <div class="block flex reverce">
+                <div class="left fadeIn">
+                  <div class="img-box obj-fit"><img src="images/p-about_img02.jpg" alt=""></div>
+                </div><!-- /.left -->
+                <div class="right fadeIn">
+                  <h3>沖縄で「平麺」といえば「アワセそば」</h3>
+                  <p>
+                    麺一筋60年以上「(有)アワセそば」の平麺は、「アワセそば」というブランドの代名詞にもなっています。<br>
+                    アワセそばの乾麺は、伝統の特殊な手作り製法と近代設備の除湿乾燥法によって製造されています。<br>
+                    茹でるともちっとした食感になる平麺は、スープにもしっかり絡みます。6～7分茹でてお好みのスープと具材を盛り付けてお召し上がりください。<br>
+                    <br>
+                    沖縄から、こだわりの伝統の味をお届けします。
+                  </p>
+                </div><!-- /.right -->
+              </div><!-- /.block -->
+            </section><!-- /.p-about_wrap01 -->
+
+            <section class="p-about_wrap02">
+              <div class="head-ttl fadeIn">
+                <h2>麺へのこだわり</h2>
+              </div>
+              <div class="block flex">
+                <div class="left fadeIn">
+                  <div class="img-box obj-fit"><img src="images/p-about_img03.jpg" alt=""></div>
+                </div><!-- /.left -->
+                <div class="right fadeIn">
+                  <h3>創業当時から変わらぬ太麺</h3>
+                  <p>
+                    アワセそばの特徴の平たい麺は、創業当時から現在でも変わりなく、50年余り同一デザインで販売しています。「元祖！平麺のアワセそば」として県内でも人気があります。
+                  </p>
+                </div><!-- /.right -->
+              </div><!-- /.block -->
+              <div class="block flex reverce">
+                <div class="left fadeIn">
+                  <div class="img-box obj-fit"><img src="images/p-about_img04.jpg" alt=""></div>
+                </div><!-- /.left -->
+                <div class="right fadeIn">
+                  <h3>厳選された小麦粉。<br>つるりとした食感。</h3>
+                  <p>
+                    アワセそばの麺の原料となる小麦粉は厳選された純強力粉を使用しています。また、製麺工程の小麦粉を練るミキシングという工程において冷水を使用し、ツルツル感と腰のある麺に仕上げています。
+                  </p>
+                </div><!-- /.right -->
+              </div><!-- /.block -->
+            </section><!-- /.p-about_wrap02 -->
+
+            <div class="top-ranking">
+              <div class="head-ttl fadeIn">
+                <h2>ランキング</h2>
+              </div>
+              <div class="ranking-list flex fadeIn">
+                <div class="box">
+                  <div class="img-box"><img src="images/top-cate_img01.jpg" alt=""></div>
+                  <p>商品名</p>
+                </div>
+                <div class="box">
+                  <div class="img-box"><img src="images/top-cate_img01.jpg" alt=""></div>
+                  <p>商品名</p>
+                </div>
+                <div class="box">
+                  <div class="img-box"><img src="images/top-cate_img01.jpg" alt=""></div>
+                  <p>商品名</p>
+                </div>
+                <div class="box">
+                  <div class="img-box"><img src="images/top-cate_img01.jpg" alt=""></div>
+                  <p>商品名</p>
+                </div>
+                <div class="box">
+                  <div class="img-box"><img src="images/top-cate_img01.jpg" alt=""></div>
+                  <p>商品名</p>
+                </div>
+              </div><!-- /.cate-list -->
+            </div><!-- /.top-ranking -->
+
+          </div><!-- /.contents -->
+
+        </div><!-- /.inner -->
+      </div><!-- /.content-wrap-->
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="fotter-top">
+        <div class="inner flex">
+
+            <div class="column column01">
+              <div class="logo img-box"><a href="./"><img src="images/logo03.svg" alt=""></a></div>
+              <a href="#"><img src="images/icon-login.svg" alt="">ログイン</a>
+              <a href="#"><img src="images/icon-cart.svg" alt="">カート</a>
+            </div><!-- /.column-->
+            <div class="column column02">
+              <nav>
+                <ul>
+                  <li><a href="./">TOP</a></li>
+                  <li><a href="about.html">アワセそばについて</a></li>
+                </ul>
+              </nav>
+              <nav>
+                <ul>
+                  <li>商品一覧</li>
+                  <li class="child"><a href="archive-product.html">・生麺</a></li>
+                  <li class="child"><a href="archive-product.html">・乾麺</a></li>
+                  <li class="child"><a href="archive-product.html">・LL麺</a></li>
+                  <li class="child"><a href="archive-product.html">・だし</a></li>
+                </ul>
+              </nav>
+              <nav>
+                <ul>
+                  <li><a href="faq.html">よくあるご質問</a></li>
+                  <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.column-->
+            <div class="column column03">
+              <div class="btn-wrap"><a class="btn01" href="contact.html"><img src="images/icon-mail.svg" alt="">お問い合わせ</a></div>
+              <nav class="navi-bottom">
+                <ul>
+                  <li><a href="company.html">会社概要</a></li>
+                  <li><a href="term.html">特定商取引法に基づく表記</a></li>
+                  <li><a href="policy.html">プライバシーポリシー</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.column-->
+  
+        </div><!-- /.inner-->
+      </div><!-- /.footer-top -->
+
+      <div class="fotter-bottom">
+        <p><small>© AWASE SOBA. All rights reserved.</small></p>
+      </div>
+
+    </footer>
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </div>
+
+</body>
+
+</html>

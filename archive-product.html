@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" type="image/png" href="images/fav.png" /> -->
+  <!-- <meta name="robots" content="index, follow"> -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css" >
+  <link rel="stylesheet" type="text/css" href="style.css" >
+
+
+  <!-- googlefont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+  <title>AWSE SOBA from OKINWA</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+</head>
+
+<body>
+
+  <div class="wrap-hidden">
+
+    <div class="head-message"><p>完全会員制　沖縄そば「アワセそば」通販サイト</p></div>
+
+    <header class="header">
+      <div class="header-inner inner">
+        <div class="header-top">
+          <div class="logo img-box colum01"><a href="./"><img src="images/logo02.svg" alt=""></a></div> <!-- /.logo -->
+          <div class="search colum02">
+            <form role="search" method="get" id="searchform" class="searchform" action="#">
+              <div>
+                  <input type="text" value="" name="s" id="s" placeholder="なにをお探しですか？"/>
+                  <input type="image" id="searchsubmit" src="images/search-btn.svg" />
+              </div>
+            </form>
+          </div><!-- /.search -->
+          <div class="colum03">
+            <nav>
+              <ul>
+                <li><a href="#"><img src="images/icon-login.svg" alt="">ログイン</a></li>
+                <li><a href="#"><img src="images/icon-cart.svg" alt="">カート</a></li>
+              </ul>
+            </nav>
+            <div class="lang-btn">言語切り替えボタンが入ります</div>
+          </div>
+        </div><!-- /.header-top -->
+        <div class="header-bottom">
+          <nav>
+            <ul>
+              <li><a href="./">HOME</a></li>
+              <li><a href="archive-product.html">商品一覧</a></li>
+              <li><a href="about.html">アワセそばについて</a></li>
+              <li><a href="guide.html">ご利用案内</a></li>
+              <li><a href="faq.html">よくあるご質問</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div><!-- /.header-bottom -->
+      </div><!-- /.header-inner-->
+    </header>
+
+    <main>
+
+      <div class="flow-btn"><a href="#"></a></div>
+
+      <div class="content-wrap p-under">
+        <!-- <div class="main-asshirai"><div class="img-box"><img src="images/ashirai04.svg" alt=""></div></div> -->
+        <div class="page-common-asshirai"><div class="img-box"><img src="images/ashirai03.svg" alt=""></div></div>
+        <div class="inner content-flex">
+
+          <aside>
+
+            <div class="side-login">
+              <p class="ttl">ログイン</p>
+              <form name="loginform" id="loginform" action="<?php echo wp_login_url(); ?>" method="post">
+                <p class="id">
+                  <label for="user_login">ログインID<br />
+                  <input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>
+                </p>
+                <p class="pass">
+                  <label for="user_pass">パスワード<br />
+                  <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" /></label>
+                </p>
+                <p class="submit">
+                  <input class="btn01" type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="ログイン" />
+                  <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+                </p>
+                <p>
+                  <a href="<?php echo wp_lostpassword_url(); ?>">パスワードをお忘れの方</a>
+                </p>
+              </form>
+            </div><!--side-login-->
+
+            <div class="side-cart">
+              <p class="ttl">カート</p>
+              <div class="box flex">
+                <div class="img-box obj-fit"><img src="images/dummy-item01.jpg" alt=""></div>
+                <p>商品名入りますテキストテキスト</p>
+              </div>
+            </div><!-- /.side-cart -->
+
+            <div class="side-cate">
+              <p>商品カテゴリ</p>
+              <nav>
+                <ul>
+                  <li><a href="archive-product.html">全ての商品</a></li>
+                  <li><a href="archive-product.html">生麺</a></li>
+                  <li><a href="archive-product.html">乾麺</a></li>
+                  <li><a href="archive-product.html">LL麺</a></li>
+                  <li><a href="archive-product.html">だし</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.side-cate -->
+
+            <div class="btn-wrap"><a class="btn02" href="faq.html">よくあるご質問</a></div>
+            <div class="btn-wrap"><a class="btn02" href="about.html">アワセそばについて</a></div>
+
+          </aside>
+
+          <div class="contents p-about">
+
+            <div class="under-mv">
+              <div class="img-box obj-fit">
+                <picture>
+                  <source srcset="images/under-mv_common.jpg" media="(max-width: 769px)">
+                  <img src="images/under-mv_common.jpg" alt="">
+                  <h1>商品一覧</h1>
+                </picture>
+              </div>
+            </div><!-- /.under-mv -->
+
+            <section class="p-produt-list_wrap">
+
+              <div class="cate-list">
+                <ul class="flex">
+                  <li>
+                    <a href="archive-product.html">
+                      全ての商品
+                      <img src="images/icon-cate01.svg" alt="">
+                      <div class="arrow"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="archive-product.html">
+                      生麺
+                      <img src="images/icon-cate02.svg" alt="">
+                      <div class="arrow"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="archive-product.html">
+                      乾麺
+                      <img src="images/icon-cate03.svg" alt="">
+                      <div class="arrow"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="archive-product.html">
+                      LL麺
+                      <img src="images/icon-cate04.svg" alt="">
+                      <div class="arrow"></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="archive-product.html">
+                      だし
+                      <img src="images/icon-cate05.svg" alt="">
+                      <div class="arrow"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div><!-- /.cate-list -->
+
+              <div class="product-list flex">
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+                <div class="product h-scale">
+                  <a href="single-product.html">
+                    <div class="img-box pbj-fit"><img src="images/top-cate_img01.jpg" alt=""></div>
+                    <p>商品名</p>
+                  </a>
+                </div>
+              </div><!-- /.product-list -->
+
+            </section><!-- /.p-produt-list_wrap -->
+
+          </div><!-- /.contents -->
+
+        </div><!-- /.inner -->
+      </div><!-- /.content-wrap-->
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="fotter-top">
+        <div class="inner flex">
+
+            <div class="column column01">
+              <div class="logo img-box"><a href="./"><img src="images/logo03.svg" alt=""></a></div>
+              <a href="#"><img src="images/icon-login.svg" alt="">ログイン</a>
+              <a href="#"><img src="images/icon-cart.svg" alt="">カート</a>
+            </div><!-- /.column-->
+            <div class="column column02">
+              <nav>
+                <ul>
+                  <li><a href="./">TOP</a></li>
+                  <li><a href="about.html">アワセそばについて</a></li>
+                </ul>
+              </nav>
+              <nav>
+                <ul>
+                  <li>商品一覧</li>
+                  <li class="child"><a href="archive-product.html">・生麺</a></li>
+                  <li class="child"><a href="archive-product.html">・乾麺</a></li>
+                  <li class="child"><a href="archive-product.html">・LL麺</a></li>
+                  <li class="child"><a href="archive-product.html">・だし</a></li>
+                </ul>
+              </nav>
+              <nav>
+                <ul>
+                  <li><a href="faq.html">よくあるご質問</a></li>
+                  <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.column-->
+            <div class="column column03">
+              <div class="btn-wrap"><a class="btn01" href="contact.html"><img src="images/icon-mail.svg" alt="">お問い合わせ</a></div>
+              <nav class="navi-bottom">
+                <ul>
+                  <li><a href="company.html">会社概要</a></li>
+                  <li><a href="term.html">特定商取引法に基づく表記</a></li>
+                  <li><a href="policy.html">プライバシーポリシー</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.column-->
+  
+        </div><!-- /.inner-->
+      </div><!-- /.footer-top -->
+
+      <div class="fotter-bottom">
+        <p><small>© AWASE SOBA. All rights reserved.</small></p>
+      </div>
+
+    </footer>
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        var quantityInput = document.getElementById('quantity');
+        var minusButton = document.getElementById('minus');
+        var plusButton = document.getElementById('plus');
+    
+        minusButton.addEventListener('click', function() {
+          var currentVal = parseInt(quantityInput.value, 10);
+          if (currentVal > 1) {
+            quantityInput.value = currentVal - 1;
+          }
+        });
+    
+        plusButton.addEventListener('click', function() {
+          var currentVal = parseInt(quantityInput.value, 10);
+          quantityInput.value = currentVal + 1;
+        });
+      });
+    </script>
+  </div>
+
+</body>
+
+</html>

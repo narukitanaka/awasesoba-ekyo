@@ -1,0 +1,736 @@
+@use "variable"as v;
+@use "common"as c;
+@use "sass:math";
+/*************************************************
+　下層共通
+*************************************************/
+.content-wrap {
+  &.p-under {
+    padding-top: 3.7rem;
+    border-top: 1.5px solid v.$main-txt;
+  }
+}
+.under-mv {
+  position: relative;
+  margin-bottom: 8rem;
+  h1 {
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: v.pxtovw(46);
+    text-shadow: v.$shadow01;
+  }
+}
+
+/*************************************************
+　アワセそばについて
+*************************************************/
+.p-about_wrap01,.p-about_wrap02 {
+  .head-ttl {
+    margin-bottom: 8rem;
+  }
+  .block {
+    justify-content: space-between;
+    margin-bottom: 8rem;
+    &.reverce {
+      flex-direction: row-reverse;
+    }
+    .left {
+      max-width: 47.3rem;
+    }
+    .right {
+      width: 46.3rem;
+      h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      p {
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+.p-about_wrap01 {
+  margin-bottom: 12rem;
+}
+
+/*************************************************
+　商品一覧
+*************************************************/
+.p-produt-list_wrap {
+  .cate-list {
+    border-bottom: 1px solid v.$main-txt;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+    ul {
+      justify-content: space-between;
+      li {
+        width: 16rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: v.$main-txt;
+        a {
+          display: flex;
+          gap: 1.4rem;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          color: #fff;
+          img {
+            width:  4.7rem;
+          }
+          .arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-top: 6px solid #ffffff;
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .product-list {
+    flex-wrap: wrap;
+    column-gap: 1.6rem;
+    row-gap: 4rem;
+    .product {
+      width: calc((100% / 5) - (6.4rem / 5) );
+      .img-box {
+        margin-bottom: .8rem;
+      }
+    }
+  }
+}
+
+/*************************************************
+　商品詳細
+*************************************************/
+.p-itemdetail {
+  .item-content {
+    display: flex;
+    gap: 4.4rem;
+    margin-bottom: 10rem;
+    @include c.mq() {
+      flex-direction: column;
+      margin-bottom: 6rem;
+    }
+  }
+  .img-content {
+    width: 47.3rem;
+    flex-shrink: 0;
+    @include c.mq(ps) {
+      max-width: 35rem;
+    }
+    @include c.mq(md) {
+      width: 30rem;
+    }
+    @include c.mq(){
+      width: 100%;
+      flex-basis: 100%;
+      margin-right: initial;
+    }
+  }
+  .img-wrapper {
+    .swiper-item {
+      overflow: hidden;
+    }
+    .swiper-slide .img-wrap {
+      aspect-ratio: 1/.97;
+      background-color: #fff;
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+  .thumb-list {
+    display: flex;
+    margin-top: 1.3rem;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+    @include c.mq() {
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .thumb-item {
+      width: calc((100% / 4) - (6.6rem / 4));
+      aspect-ratio: 1/.97;
+      background-color: #fff;
+      @include c.mq() {
+        width: calc((100% / 4) - (3rem / 4));
+      }
+    }
+    .thumb-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+  // 右側のコンテンツ
+  .detail-content {
+    width: 100%;
+    @include c.mq(){
+      width: 100%;
+      flex-basis: 100%;
+    }
+    .name {
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      @include c.mq() {
+        font-size: 2rem;
+      }
+    }
+    .item-count {
+      padding-top: 3.7rem;
+      border-top: 1px solid v.$main-txt;
+      margin-bottom: 3.5rem;
+      form {
+        display: block;
+      }
+      .product-quantity {
+        width: 17.5rem;
+        height: 6rem;
+        display: flex;
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid #B2B2B2;
+        button {
+          width: 6rem;
+          font-weight: 500;
+          background-color: #fff;
+        }
+        input {
+          width: initial;
+          padding: initial;
+          border-radius: initial;
+          width: 6.5rem;
+          font-size: 2rem;
+          font-weight: 500;
+          color: #000;
+          background-color: #fff;
+        }
+      }
+    }
+    // input numberの非表示
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    .txt {
+      margin-bottom: 5.1rem;
+      @include c.mq() {
+        font-size: 1.4rem;
+      }
+    }
+    .item-infomation {
+      table {
+        table-layout: fixed;
+        width: 100%;
+        tr {
+          border-bottom: 1px solid v.$main-txt;
+          @include c.mq() {
+            border-bottom: none;
+          }
+          &:first-of-type {
+            border-top: 1px solid v.$main-txt;
+          }
+        }
+        th,td {
+          font-size: 1.4rem;
+          line-height: 2;
+          padding: 1.5rem 0;
+          color: #221505;
+        }
+        th {
+          width: 30%;
+          letter-spacing: 1px;
+          font-weight: 700;
+          @include c.mq() {
+            display: block;
+            width: 100%;
+            padding-bottom: 0;
+          }
+        }
+        td {
+          font-weight: 500;
+          @include c.mq() {
+            display: block;
+            width: 100%;
+            font-size: 1.4rem;
+            padding-top: .5rem;
+            border-bottom: 3px dotted v.$sub-color02;
+          }        
+        }
+      }
+    }
+  }
+}
+.p-single-product {
+  .head-ttl {
+    margin-bottom: 3rem;
+  }
+  .recommend_swiper {
+    width: 100%;
+    .swiper-wrapper {
+      display: flex;
+      gap: 1.6rem;
+      @include c.mq() {
+        gap: 0;
+      }
+    }
+    .product-box {
+      width: 18.7rem;
+      @include c.mq() {
+        width: auto;
+      }
+      .img-box {
+        margin-bottom: .8rem;
+      }
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+  .swiper-scrollbar {
+    @include c.mq() {
+      position: absolute;
+      bottom: -8rem !important;
+      background-color: #fff;
+      height: 6px !important;
+      margin-bottom:  5rem;
+      overflow: hidden;
+    }
+    .swiper-scrollbar-drag {
+      @include c.mq() {
+        background-color: #3F3B3A;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+
+/*************************************************
+　ご利用案内
+*************************************************/
+.p-guide_wrap01 {
+  .top-message {
+    position: relative;
+    max-width: 78.7rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: v.$shadow02;
+    padding: 4rem 0 3rem;
+    margin: 3rem auto 15rem;
+    .ashirai01,.ashirai02 {
+      position: absolute;
+      z-index: 1;
+    }
+    .ashirai01 {
+      top: 2.1rem;
+      left: -3.6rem;
+      width: 20rem;
+    }
+    .ashirai02 {
+      top: -3.1rem;
+      right: -5.1rem;
+      width: 16.8rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .head-ttl {
+    margin-bottom: 4rem;
+  }
+  .block {
+    margin-bottom: 8rem;
+    .box {
+      max-width: 78.7rem;
+      margin: 0 auto 1.2rem;
+      padding: 1.3rem 0;
+      font-size: 1.6rem;
+      line-height: 1.7;
+      color: v.$main-txt;
+      text-align: center;
+      box-shadow: v.$shadow01;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .arrow {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      border-top: 6px solid v.$main-txt;
+      border-bottom: 0;
+      margin: 0 auto 1.2rem;
+    }
+    p {
+      font-size: 1.8rem;
+      font-weight: 700;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid v.$sub-color01;
+    }
+  }
+}
+
+
+/*************************************************
+　よくあるご質問
+*************************************************/
+.p-faq_wrap01 {
+  .anker_wrap {
+    justify-content: space-between;
+    margin-bottom: 8rem;
+    .btn02 {
+      width: 29.4rem;
+      aspect-ratio: 1/.31;
+      flex-direction: column;
+      gap: .4em;
+      font-weight: 700;
+      padding-top: 1rem;
+      transition: all .3s;
+      &::before {
+        width: 30rem;
+        aspect-ratio: 1/.33;
+        position: absolute;
+        top: -.3rem;
+        left: -.3rem;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .anker-point {
+    margin-top: -6rem;
+    padding-top: 6rem;
+    @include c.mq() {
+      margin-top: -6rem;
+      padding-top: 6rem;
+    }
+  }
+  .block {
+    margin-bottom: 8rem;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 4rem;
+    @include c.mq() {
+      margin-bottom: 5rem;
+      padding: 4rem v.pxtovw_sp(10);
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: v.$sub-color04;
+      text-align: center;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid v.$sub-color04;
+      @include c.mq() {
+        font-size: 1.6rem;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .qa-list {
+    .qa {
+      position: relative;
+      padding: 3rem 0;
+      border-bottom: 1px solid v.$sub-color04;
+      @include c.mq() {
+        padding: 2rem 0;
+      }
+      &::before {
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-top: 6px solid v.$main-txt;
+        border-bottom: 0;
+        margin: 0 auto 1.2rem;
+        transition: all .3s;
+      }
+      dt {
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+        color: v.$sub-color02;
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        padding-left: 2rem;
+        @include c.mq() {
+          max-width: 28rem;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          letter-spacing: 2px;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+        img {
+          width: 2.5rem;
+        }
+      }
+      dd {
+        margin-top: 3rem;
+        border-radius: 5px;
+        @include c.mq() {
+          padding: 0 1.5rem;
+          margin-top: 2rem;
+        }
+        p {
+          max-width: 85rem;
+          font-size: 1.5rem;
+          line-height: 1.7;
+          letter-spacing: 2px;
+          color: v.$sub-color02;
+          padding-left: 2rem;
+          margin-bottom: 3rem;
+          @include c.mq() {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            padding: 0;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          a {
+            color: v.$sub-color02;
+          }
+          span {
+            color: #f00;
+          }
+        }
+      }
+    }
+    .open {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+
+/*************************************************
+　お問い合わせ
+*************************************************/
+.p-contact_wrap01 {
+  .form_wrap {
+    form {
+      table {
+        width: 100%;
+        table-layout: fixed;
+        tr {
+          &:last-of-type {
+            th {
+              vertical-align: baseline;
+              padding-top: 1rem;
+            }
+            td {
+              padding-bottom: 4rem;
+              @include c.mq() {
+                padding-bottom: 2rem;
+              }
+            }
+          }
+          th {
+            width: 22%;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            vertical-align: middle;
+            padding-bottom: 17px;
+            color: v.$sub-color04;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 10px;
+              font-size: 1.4rem;
+            }
+          }
+          td {
+            width: 78%;
+            padding-bottom: 17px;
+            color: v.$sub-color04;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 20px;
+              font-size: 1.4rem;
+            }
+            input,textarea {
+              width: 100%;
+              background-color: #fff;
+              padding: 15px 25px;
+              font-size: 1.6rem;
+              letter-spacing: 1px;
+              border: 1px solid rgba($color: v.$sub-color04, $alpha: .4);
+              border-radius: 5px;
+              @include c.mq() {
+                padding: 1rem;
+              }
+            }
+            textarea {
+              @include c.mq() {
+                height: 15rem;
+              }
+            }
+          }
+        }
+      }
+      p {
+        font-size: 1.6rem;
+        color:  v.$sub-color04;
+        margin-bottom: 5rem;
+        @include c.mq() {
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+        a {
+          font-weight: 600;
+          color: #FF0000;
+          text-decoration: underline;
+        }
+      }
+      .btn-wrap {
+        display: flex;
+        justify-content: center;
+        .btn02 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+　会社概要　特定商取引法に基づく表記
+*************************************************/
+.p-company_wrap01,.p-term_wrap01 {
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3rem 0;
+    tr {
+      th,td {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        line-height: 2;
+        @include c.mq() {
+          line-height: 1.7;
+        }
+      }
+      th {
+        width: 18%;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: v.$sub-color02;
+        padding: 1rem 0;
+        border-bottom: 1px solid #EA5514;
+        @include c.mq() {
+          display: block;
+          width: 100%;
+          padding-bottom: 0;
+          border-bottom: none;
+          font-size: 1.4rem;
+        }
+      }
+      td {
+        color: v.$sub-color02;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 1rem;
+        border-bottom: 1px solid v.$sub-color04;
+        @include c.mq() {
+          display: block;
+          width: 100%;
+          font-size: 1.3rem;
+        }
+        span {
+          color: #f00;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+　プライバシーポリシー
+*************************************************/
+.p-policy_wrap01 {
+  .block {
+    margin-bottom: 5rem;
+    @include c.mq() {
+      margin-bottom: 3rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      color: #000;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #000;
+      margin-bottom: 2.2rem;
+      @include c.mq() {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    p,a {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: #000;
+      @include c.mq() {
+        font-size: 1.2rem;
+      }
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}

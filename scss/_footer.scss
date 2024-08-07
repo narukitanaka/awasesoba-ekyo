@@ -1,0 +1,94 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+footer
+*************************************************/
+footer {
+  position: relative;
+  .fotter-top {
+    background-color: #fff;
+    border-top: 5px solid #392110;
+    padding: 4rem 0 5rem;
+    .inner {
+      justify-content: space-between;
+    }
+    .column01 {
+      .img-box {
+        margin-bottom: 3rem;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .column02 {
+      padding-top: 2.7rem;
+      display: flex;
+      gap: 6.3rem;
+      nav {
+        ul {
+          li {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            a {
+              font-size: 1.4rem;
+              transition: all .3s;
+              &:hover {
+                color: v.$sub-color03;
+              }
+            }
+          }
+          .child {
+            margin-bottom: .5rem;
+          }
+        }
+      }
+    }
+    .column03 {
+      padding-top: 2.7rem;
+      .btn-wrap {
+        margin-bottom: 2.6rem;
+        .btn01 {
+          gap: 1.5rem;
+          width: 21.7rem;
+          aspect-ratio: 1/.25;
+          font-size: 1.8rem;
+          &::before {
+            width: 22rem;
+          }
+          &::after {
+            display: none;
+          }
+        }
+      }
+      nav {
+        ul {
+          li {
+            margin-bottom: 1.2rem;
+            a {
+              font-size: 1.3rem;
+              transition: all .3s;
+              &:hover {
+                color: v.$sub-color03;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .fotter-bottom {
+    background-color: #392110;
+    padding: 1rem 0;
+    p {
+      text-align: center;
+      color: #fff;
+      small {
+        font-size: 1rem;
+      }
+    }
+  } 
+}
