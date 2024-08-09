@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 <main>
 
-  <div class="flow-btn add-cart"><a href="<?php echo home_url('/cart'); ?>"></a></div>
+  <?php if ( is_user_logged_in() ) : ?>
+    <div class="flow-btn add-cart"><a href="<?php echo home_url('/cart'); ?>"></a></div>
+  <?php endif; ?>
 
   <div class="content-wrap p-under">
     <!-- <div class="main-asshirai"><div class="img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai04.svg" alt=""></div></div> -->
