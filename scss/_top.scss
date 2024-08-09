@@ -149,9 +149,15 @@ top
   .ranking-list {
     gap: 1.6rem;
     .box {
+      width: calc((100% / 5) - (6.4rem / 5));
       position: relative;
       .img-box {
         margin-bottom: .8rem;
+        aspect-ratio: 1/.79;
+        background-color: #fff;
+        img {
+          object-fit: contain;
+        }
       }
       &::before {
         position: absolute;

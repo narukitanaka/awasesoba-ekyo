@@ -366,6 +366,31 @@ outline-offset: -2px;
     background-color: v.$sub-color02;
     padding: 1rem 0;
   }
+  .now-login {
+    text-align: center;
+    padding: 2.2rem 1.2rem 1.4rem;
+    p {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      position: relative;
+      display: block;
+      font-size: 1.4rem;
+      letter-spacing: 0;
+      text-align: center;
+      &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 3rem;
+        content: "";
+        width: 7px;
+        aspect-ratio: 1/1.43;
+        background: url(images/arrow02.svg) no-repeat center/contain;
+        transition: all .3s;
+      }
+    }
+  }
   form {
     padding: 2.2rem 1.2rem 1.4rem;
     p {
@@ -425,11 +450,24 @@ outline-offset: -2px;
     .img-box {
       max-width: 6.7rem;
       aspect-ratio: 1/1;
+      background-color: #fff;
+      img {
+        object-fit: contain;
+      }
     }
     p {
-      font-size: 1.4rem;
-      letter-spacing: 0;
+      a {
+        display: inline-block;
+        font-size: 1.2rem;
+        letter-spacing: 0;
+      }
     }
+  }
+  .no-cartitem {
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 2.3rem;
   }
 }
 

@@ -37,18 +37,19 @@
         <div class="header-top">
           <div class="logo img-box colum01"><a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo02.svg" alt=""></a></div> <!-- /.logo -->
           <div class="search colum02">
-            <form role="search" method="get" id="searchform" class="searchform" action="#">
+            <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/'); ?>">
               <div>
                   <input type="text" value="" name="s" id="s" placeholder="なにをお探しですか？"/>
-                  <input type="image" id="searchsubmit" src="images/search-btn.svg" />
+                  <input type="hidden" name="post_type" value="product" />
+                  <input type="image" id="searchsubmit" src="<?php echo get_template_directory_uri(); ?>/images/search-btn.svg" />
               </div>
             </form>
           </div><!-- /.search -->
           <div class="colum03">
             <nav>
               <ul>
-                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-login.svg" alt="">ログイン</a></li>
-                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-cart.svg" alt="">カート</a></li>
+                <li><a href="<?php echo home_url('/my-account'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-login.svg" alt=""><?php if ( is_user_logged_in() ) : ?>マイページ<?php else : ?>ログイン<?php endif; ?></a></li>
+                <li><a href="<?php echo home_url('/cart'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-cart.svg" alt="">カート</a></li>
               </ul>
             </nav>
             <div class="lang-btn">言語切り替えボタンが入ります</div>
@@ -58,11 +59,11 @@
           <nav>
             <ul>
               <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
-              <li><a href="archive-product.html">商品一覧</a></li>
-              <li><a href="about.html">アワセそばについて</a></li>
-              <li><a href="guide.html">ご利用案内</a></li>
-              <li><a href="faq.html">よくあるご質問</a></li>
-              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/shop/">商品一覧</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/about/">アワセそばについて</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/guide/">ご利用案内</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/faq/">よくあるご質問</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/contact/">お問い合わせ</a></li>
             </ul>
           </nav>
         </div><!-- /.header-bottom -->

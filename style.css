@@ -333,6 +333,31 @@ input[type=button]:focus {
   background-color: #392110;
   padding: 1rem 0;
 }
+.side-login .now-login {
+  text-align: center;
+  padding: 2.2rem 1.2rem 1.4rem;
+}
+.side-login .now-login p {
+  margin-bottom: 1.5rem;
+}
+.side-login .now-login a {
+  position: relative;
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+.side-login .now-login a::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3rem;
+  content: "";
+  width: 7px;
+  aspect-ratio: 1/1.43;
+  background: url(images/arrow02.svg) no-repeat center/contain;
+  transition: all 0.3s;
+}
 .side-login form {
   padding: 2.2rem 1.2rem 1.4rem;
 }
@@ -394,10 +419,22 @@ input[type=button]:focus {
 .side-cart .box .img-box {
   max-width: 6.7rem;
   aspect-ratio: 1/1;
+  background-color: #fff;
 }
-.side-cart .box p {
-  font-size: 1.4rem;
+.side-cart .box .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.side-cart .box p a {
+  display: inline-block;
+  font-size: 1.2rem;
   letter-spacing: 0;
+}
+.side-cart .no-cartitem {
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 2.3rem;
 }
 
 .side-cate {
@@ -845,10 +882,17 @@ top
   gap: 1.6rem;
 }
 .top-ranking .ranking-list .box {
+  width: calc(20% - 1.28rem);
   position: relative;
 }
 .top-ranking .ranking-list .box .img-box {
   margin-bottom: 0.8rem;
+  aspect-ratio: 1/0.79;
+  background-color: #fff;
+}
+.top-ranking .ranking-list .box .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .top-ranking .ranking-list .box::before {
   position: absolute;
@@ -1033,6 +1077,12 @@ top
 }
 .p-produt-list_wrap .product-list .product .img-box {
   margin-bottom: 0.8rem;
+  aspect-ratio: 1/0.79;
+  background-color: #fff;
+}
+.p-produt-list_wrap .product-list .product .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /*************************************************
@@ -1257,7 +1307,13 @@ top
   }
 }
 .p-single-product .recommend_swiper .product-box .img-box {
+  aspect-ratio: 1/0.79;
   margin-bottom: 0.8rem;
+  background-color: #fff;
+}
+.p-single-product .recommend_swiper .product-box .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .p-single-product .recommend_swiper .product-box p {
   font-weight: 600;
@@ -1568,18 +1624,18 @@ top
     height: 15rem;
   }
 }
-.p-contact_wrap01 .form_wrap form p {
+.p-contact_wrap01 .form_wrap form .policy {
   font-size: 1.6rem;
   color: #1a1a1a;
   margin-bottom: 5rem;
 }
 @media screen and (max-width: 768px) {
-  .p-contact_wrap01 .form_wrap form p {
+  .p-contact_wrap01 .form_wrap form .policy {
     text-align: left;
     margin-bottom: 3rem;
   }
 }
-.p-contact_wrap01 .form_wrap form p a {
+.p-contact_wrap01 .form_wrap form .policy a {
   font-weight: 600;
   color: #FF0000;
   text-decoration: underline;
@@ -1588,8 +1644,31 @@ top
   display: flex;
   justify-content: center;
 }
-.p-contact_wrap01 .form_wrap form .btn-wrap .btn02 {
+.p-contact_wrap01 .form_wrap form .btn-wrap .btn02 p span {
+  display: none;
+}
+.p-contact_wrap01 .form_wrap form .btn-wrap .btn02 input {
   font-size: 1.5rem;
+  color: #fff;
+}
+
+/*************************************************
+　サンクスページ
+*************************************************/
+.p-thanks_wrap01 h2 {
+  margin-bottom: 4rem;
+}
+.p-thanks_wrap01 p {
+  font-size: 1.7rem;
+  line-height: 2;
+  margin-bottom: 6rem;
+}
+.p-thanks_wrap01 p a {
+  color: #D85219;
+}
+.p-thanks_wrap01 .btn-wrap {
+  display: flex;
+  justify-content: center;
 }
 
 /*************************************************
@@ -1685,6 +1764,32 @@ top
 }
 .p-policy_wrap01 .block a {
   text-decoration: underline;
+}
+
+/*************************************************
+　マイページ
+*************************************************/
+.woocommerce h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.woocommerce form {
+  background-color: #fff;
+  border: none !important;
+  padding: 4rem 10rem !important;
+}
+.woocommerce form p {
+  margin-bottom: 2rem;
+}
+.woocommerce form .woocommerce-form-row {
+  margin-bottom: 1.5rem !important;
+}
+.woocommerce form .woocommerce-form-row label {
+  margin-bottom: 1rem;
+}
+.woocommerce form .woocommerce-form-row input {
+  padding: 1rem;
+  background-color: #ededed;
 }
 
 /**
