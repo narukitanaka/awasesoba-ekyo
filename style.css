@@ -1792,6 +1792,76 @@ top
   background-color: #ededed;
 }
 
+.woocommerce-MyAccount-navigation {
+  margin-bottom: 6rem;
+}
+.woocommerce-MyAccount-navigation ul {
+  display: flex;
+  gap: 1.5rem;
+}
+.woocommerce-MyAccount-navigation ul li {
+  width: calc(16.6666666667% - 1.5rem);
+}
+.woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: #3E1900;
+  color: #fff;
+}
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link--downloads {
+  display: none;
+}
+
+.woocommerce-MyAccount-content p a {
+  color: #D85219;
+  text-decoration: underline;
+}
+.woocommerce-MyAccount-content .woocommerce-info {
+  font-size: 1.4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.woocommerce-MyAccount-content .woocommerce-info::before {
+  top: 2.2em;
+}
+
+.woocommerce-Addresses .woocommerce-Address-title {
+  margin-bottom: 1rem;
+}
+.woocommerce-Addresses .woocommerce-Address-title a {
+  color: #D85219;
+  text-decoration: underline;
+}
+.woocommerce-Addresses address {
+  font-size: 1.4rem;
+}
+
+.woocommerce-address-fields .form-row {
+  margin-bottom: 1.5rem !important;
+}
+.woocommerce-address-fields .form-row label {
+  margin-bottom: 1rem;
+}
+.woocommerce-address-fields .form-row input {
+  padding: 1rem;
+  background-color: #ededed;
+}
+.woocommerce-address-fields .form-row .select2-selection--single {
+  height: auto;
+  border: none;
+}
+.woocommerce-address-fields .form-row .select2-selection--single .select2-selection__rendered {
+  padding: 1rem;
+  background-color: #ededed;
+}
+.woocommerce-address-fields .form-row .select2-selection--single .select2-selection__arrow {
+  height: 4.2rem;
+}
+
 /**
  * Swiper 8.1.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
