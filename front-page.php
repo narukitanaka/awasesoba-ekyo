@@ -66,7 +66,7 @@
           <div class="contents p-top">
 
             <div class="top-message fadeIn">
-              <p>当店は、会員登録制の通販サイトです<br><span>会員登録後に購入が可能となります</span></p>
+              <p>当店は、会員登録制の<br class="u-sp">通販サイトです<br><span>会員登録後に購入が<br class="u-sp">可能となります</span></p>
               <div class="ashirai01 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-1.svg" alt=""></div>
               <div class="ashirai02 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-2.svg" alt=""></div>
             </div><!-- /.top-message -->
@@ -109,7 +109,7 @@
                 <div class="search">
                   <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/'); ?>">
                     <div>
-                        <input type="text" value="" name="s" id="s" placeholder="なにをお探しですか？"/>
+                        <input type="text" value="" name="s" id="s" placeholder="商品名・キーワード検索"/>
                         <input type="hidden" name="post_type" value="product" />
                         <input type="image" id="searchsubmit" src="<?php echo get_template_directory_uri(); ?>/images/search-btn.svg" />
                     </div>
@@ -125,53 +125,57 @@
                 <h2>ランキング</h2>
               </div>
 
-                <?php
-                // 販売数に基づいて商品を取得
-                $args = array(
-                    'post_type' => 'product',
-                    'posts_per_page' => 5,
-                    'meta_key' => 'total_sales',
-                    'orderby' => 'meta_value_num',
-                    'order' => 'DESC',
-                );
-                $loop = new WP_Query($args);
-                // 販売数に基づく商品がない場合、ランダムな商品を取得
-                if (!$loop->have_posts()) {
-                    $args = array(
-                        'post_type' => 'product',
-                        'posts_per_page' => 5,
-                        'orderby' => 'rand',
-                    );
-                    $loop = new WP_Query($args);
-                }
-                if ($loop->have_posts()) {
-                  echo '<div class="ranking-list flex fadeIn">';
-                  while ($loop->have_posts()) {
-                  $loop->the_post();
-                  global $product;
-                  ?>
-                  <div class="box h-scale">
-                      <a href="<?php the_permalink(); ?>">
-                          <div class="img-box obj-fit">
-                            <?php 
-                            $product_image_id = $product->get_image_id();
-                            if ($product_image_id) {
-                                echo wp_get_attachment_image($product_image_id, 'full');
-                            }
-                            ?>
-                          </div>
-                          <p><?php the_title(); ?></p>
-                      </a>
-                  </div>
+                <div class="ranking-swiper">
+
                   <?php
+                  // 販売数に基づいて商品を取得
+                  $args = array(
+                      'post_type' => 'product',
+                      'posts_per_page' => 5,
+                      'meta_key' => 'total_sales',
+                      'orderby' => 'meta_value_num',
+                      'order' => 'DESC',
+                  );
+                  $loop = new WP_Query($args);
+                  // 販売数に基づく商品がない場合、ランダムな商品を取得
+                  if (!$loop->have_posts()) {
+                      $args = array(
+                          'post_type' => 'product',
+                          'posts_per_page' => 5,
+                          'orderby' => 'rand',
+                      );
+                      $loop = new WP_Query($args);
                   }
-                  echo '</div>';
-                } else {
-                  echo __('No products found');
-                }
-                // クエリをリセット
-                wp_reset_postdata();
-                ?>
+                  if ($loop->have_posts()) {
+                    echo '<div class="swiper-wrapper ranking-list flex fadeIn">';
+                    while ($loop->have_posts()) {
+                    $loop->the_post();
+                    global $product;
+                    ?>
+                    <div class="box swiper-slide h-scale">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="img-box obj-fit">
+                              <?php 
+                              $product_image_id = $product->get_image_id();
+                              if ($product_image_id) {
+                                  echo wp_get_attachment_image($product_image_id, 'full');
+                              }
+                              ?>
+                            </div>
+                            <p><?php the_title(); ?></p>
+                        </a>
+                    </div>
+                    <?php
+                    }
+                    echo '</div>';
+                  } else {
+                    echo __('No products found');
+                  }
+                  // クエリをリセット
+                  wp_reset_postdata();
+                  ?>
+
+                </div>
               
             </div><!-- /.top-ranking -->
 

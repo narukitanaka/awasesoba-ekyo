@@ -11,10 +11,16 @@ footer {
     padding: 4rem 0 5rem;
     .inner {
       justify-content: space-between;
+      @include c.mq() {
+        flex-direction: column;
+      }
     }
     .column01 {
       .img-box {
         margin-bottom: 3rem;
+        @include c.mq() {
+          width: min(v.pxtovw_sp(312), 40rem);
+        }
       }
       a {
         display: flex;
@@ -28,16 +34,38 @@ footer {
       padding-top: 2.7rem;
       display: flex;
       gap: 6.3rem;
+      @include c.mq() {
+        padding: 0 1.5rem;
+      }
       nav {
         ul {
           li {
             font-size: 1.4rem;
             margin-bottom: 2rem;
+            @include c.mq() {
+              margin-bottom: 1.5rem;
+            }
             a {
               font-size: 1.4rem;
               transition: all .3s;
+              @include c.mq() {
+                font-size: 1.2rem;
+                font-size: min(v.pxtovw_sp(12), 1.6rem);
+              }
               &:hover {
                 color: v.$sub-color03;
+              }
+              img {
+                @include c.mq() {
+                  width: 1.6rem;
+                }
+              }
+              &:has(img) {
+                @include c.mq() {
+                  display: flex;
+                  gap: .5rem;
+                  align-items: center;
+                }
               }
             }
           }
@@ -56,6 +84,9 @@ footer {
           width: 21.7rem;
           aspect-ratio: 1/.25;
           font-size: 1.8rem;
+          @include c.mq() {
+            margin: 0 auto;
+          }
           &::before {
             width: 22rem;
           }
@@ -65,12 +96,28 @@ footer {
         }
       }
       nav {
+        @include c.mq() {
+          width: 24rem;
+          margin: 0 auto;
+        }
         ul {
+          @include c.mq() {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.9rem;
+            row-gap: .4rem;
+          }
           li {
             margin-bottom: 1.2rem;
+            @include c.mq() {
+              margin-bottom: 0;
+            }
             a {
               font-size: 1.3rem;
               transition: all .3s;
+              @include c.mq() {
+                font-size: min(v.pxtovw_sp(11), 1.4rem);
+              }
               &:hover {
                 color: v.$sub-color03;
               }

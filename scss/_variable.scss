@@ -15,7 +15,7 @@ $shadow02: 0 0 15px rgba(#000 , .1);
 //vwを自動計算
 @use "sass:math";
 $base-viewport: 1440; // ブレイクポイントはデザインボードに合わせてください
-$base-viewport_sp: 375; // ブレイクポイントはデザインボードに合わせてください
+$base-viewport_sp: 390; // ブレイクポイントはデザインボードに合わせてください
 
 @function pxtovw($size-in-px) {
   @return math.div($size-in-px, $base-viewport) * 100vw;

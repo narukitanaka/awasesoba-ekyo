@@ -8,11 +8,36 @@
   &.p-under {
     padding-top: 3.7rem;
     border-top: 1.5px solid v.$main-txt;
+    @include c.mq() {
+      padding-top: 0;
+      border-top: none;
+    }
   }
 }
 .under-mv {
   position: relative;
   margin-bottom: 8rem;
+  @include c.mq() {
+    width: 100vw;
+    margin-top: 17rem;
+    transform: translateX(v.pxtovw_sp(-20));
+  }
+  .img-box {
+    @include c.mq() {
+      aspect-ratio: 1/.39;
+    }
+    &::after {
+      @include c.mq() {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #3E0014, $alpha: .2);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
   h1 {
     font-size: 2.6rem;
     letter-spacing: 4px;
@@ -22,6 +47,11 @@
     transform: translateY(-50%);
     left: v.pxtovw(46);
     text-shadow: v.$shadow01;
+    @include c.mq() {
+      font-size: 1.8rem;
+      left: v.pxtovw_sp(20);
+      z-index: 2;
+    }
   }
 }
 
@@ -31,18 +61,45 @@
 .p-about_wrap01,.p-about_wrap02 {
   .head-ttl {
     margin-bottom: 8rem;
+    @include c.mq() {
+      margin-bottom: 4rem;
+    }
   }
   .block {
     justify-content: space-between;
     margin-bottom: 8rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 1.7rem;
+      margin-bottom: 4rem;
+    }
     &.reverce {
       flex-direction: row-reverse;
+      @include c.mq() {
+        flex-direction: column;
+      }
     }
     .left {
       max-width: 47.3rem;
+      h3 {
+        @include c.mq() {
+          font-size: 1.8rem;
+          font-weight: 700;
+          letter-spacing: 0;
+          margin-bottom: 1.7rem;
+        }
+      }
+      .img-box {
+        @include c.mq() {
+          aspect-ratio: 1/.67;
+        }
+      }
     }
     .right {
       width: 46.3rem;
+      @include c.mq() {
+        width: 100%;
+      }
       h3 {
         font-size: 2rem;
         font-weight: 700;
@@ -56,7 +113,46 @@
 }
 .p-about_wrap01 {
   margin-bottom: 12rem;
+  .block {
+    &:first-of-type {
+      @include c.mq() {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  .img-box {
+    @include c.mq() {
+      margin: 0 auto 4rem;
+    }
+    &.ashirai {
+      @include c.mq() {
+        width: min(v.pxtovw_sp(125), 25rem);
+      }
+    }
+  }
 }
+.p-about_wrap02 {
+  @include c.mq() {
+    margin-bottom: 12rem;
+  }
+  .block {
+    .left {
+      .img-box {
+        @include c.mq() {
+          aspect-ratio: 1/.43;
+        }
+      }
+    }
+  }
+}
+.p-about {
+  .top-ranking {
+    @include c.mq() {
+      margin-bottom: 0;
+    }
+  }
+}
+
 
 /*************************************************
 　商品一覧

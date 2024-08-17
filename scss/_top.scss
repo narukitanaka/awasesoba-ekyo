@@ -9,17 +9,49 @@ top
   width: 100vw;
   aspect-ratio: 1/.37;
   margin-bottom: 5.4rem;
+  margin-top: 22.4rem;
+  @include c.mq() {
+    margin-bottom: 4.4rem;
+    margin-top: 17rem;
+  }
+  .swiper-slide {
+    @include c.mq() {
+      position: relative;
+      aspect-ratio: 1/.48;
+    }
+    &::after {
+      @include c.mq() {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #3E0014, $alpha: .3);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
   .swiper-pagination {
     width: 20rem !important;
     bottom: 5rem !important;
     left: auto !important;
     right: v.pxtovw(100);
+    @include c.mq() {
+      width: v.pxtovw_sp(120) !important;
+      bottom: 1.5rem !important;
+      right: auto !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
     .swiper-pagination-bullet {
       width: 3rem;
       height: 2px;
       border: none;
       border-radius: 100vmax;
       background-color: rgba($color: #fff, $alpha: .5);
+      @include c.mq() {
+        width: 1.5rem;
+      }
     }
     .swiper-pagination-bullet-active {
       background-color: #fff;
@@ -35,6 +67,10 @@ top
     color: #fff;
     text-shadow: v.$shadow01;
     z-index: 1;
+    @include c.mq() {
+      left: v.pxtovw_sp(20);
+      font-size: min(v.pxtovw_sp(18), 3rem);
+    }
   }
   .ahirai01,.ahirai02 {
     position: absolute;
@@ -44,11 +80,21 @@ top
     top: v.pxtovw(40);
     left: v.pxtovw(40);
     width: 27.2rem;
+    @include c.mq() {
+      top: v.pxtovw_sp(30);
+      left: v.pxtovw_sp(-2);
+      width: v.pxtovw_sp(134);
+    }
   }
   .ahirai02 {
     bottom: v.pxtovw(84);
     right: v.pxtovw(50);
     width: 27.2rem;
+    @include c.mq() {
+      bottom: v.pxtovw_sp(22);
+      right: v.pxtovw_sp(-43);
+      width: v.pxtovw_sp(134);
+    }
   }
 }
 
@@ -61,6 +107,10 @@ top
     box-shadow: v.$shadow02;
     padding: 4rem 0 3rem;
     margin: 3rem auto 15rem;
+    @include c.mq() {
+      max-width: 40rem;
+      margin-bottom: 14rem;
+    }
     .ashirai01,.ashirai02 {
       position: absolute;
       z-index: 1;
@@ -69,18 +119,37 @@ top
       top: 2.1rem;
       left: -3.6rem;
       width: 20rem;
+      @include c.mq() {
+        top: 9rem;
+        left: -1.6rem;
+        width: 10.3rem;
+      }
     }
     .ashirai02 {
       top: -3.1rem;
       right: -5.1rem;
       width: 16.8rem;
+      @include c.mq() {
+        top: -4rem;
+        right: -2rem;
+        width: 10.6rem;
+      }
     }
     p {
       font-size: 2rem;
       font-weight: 700;
       text-align: center;
+      @include c.mq() {
+        font-size: 1.8rem;
+        line-height: 1.5;
+      }
       span {
         font-size: 1.5rem;
+        @include c.mq() {
+          display: block;
+          font-size: 1.3rem;
+          margin-top: 2rem;
+        }
       }
     }
   }
@@ -89,13 +158,28 @@ top
     .cate-list {
       gap: 1.3rem;
       margin-bottom: 8rem;
+      @include c.mq() {
+        flex-wrap: wrap;
+        gap: 1rem;
+        row-gap: 1.3rem;
+        margin-bottom: 3rem;
+      }
       .box {
+        @include c.mq() {
+          width: calc((100% / 2) - .5rem);
+        }
         .img-box {
           margin-bottom: .7rem;
+          @include c.mq() {
+            aspect-ratio: 1/.41;
+          }
         }
         p {
           font-size: 1.8rem;
           font-weight: 600;
+          @include c.mq() {
+            font-size: 1.6rem;
+          }
         }
       }
     }
@@ -107,18 +191,32 @@ top
     box-shadow: v.$shadow02;
     padding: 3.7rem 11rem;
     margin-bottom: 6rem;
+    @include c.mq() {
+      padding: 1.8rem 1.3rem;
+      margin-bottom: 2rem;
+    }
     .flex {
       align-items: center;
       gap: 5.9rem;
+      @include c.mq() {
+        flex-direction: column;
+        gap: 2.2rem;
+      }
     }
     h3 {
       font-size: 1.7rem;
+      @include c.mq() {
+        font-size: 1.5rem;
+      }
     }
     .search {
       height: 5rem;
       border-radius: 5px;
       border: 1px solid v.$sub-color01;
       overflow: hidden;
+      @include c.mq() {
+        height: 4rem;
+      }
       input[type="text"] {
         width: 46.8rem;
         height: 5rem;
@@ -126,11 +224,20 @@ top
         font-weight: 500;
         padding: .8rem 1.8rem;
         background-color: rgba($color: #fff, $alpha: .5);
+        @include c.mq() {
+          width: 26.5rem;
+          height: 4rem;
+          font-size: 1.4rem;
+          padding: 1rem 1.6rem;
+        }
       }
       input[type="image"] {
         width: 5rem;
         aspect-ratio: 1/1;
         background-color: v.$main-txt;
+        @include c.mq() {
+          width: 4rem;
+        }
       }
     }
   }
@@ -148,9 +255,16 @@ top
   }
   .ranking-list {
     gap: 1.6rem;
+    @include c.mq(md) {
+      row-gap: normal;
+      column-gap: normal;
+    }
     .box {
       width: calc((100% / 5) - (6.4rem / 5));
       position: relative;
+      @include c.mq(md) {
+        width: auto;
+      }
       .img-box {
         margin-bottom: .8rem;
         aspect-ratio: 1/.79;
@@ -199,11 +313,21 @@ top
 
 .top-faq {
   margin-bottom: 12.4rem;
+  @include c.mq() {
+    margin-bottom: 4rem;
+  }
   .head-ttl {
     margin-bottom: 4rem;
+    @include c.mq() {
+      margin-bottom: 2rem;
+    }
   }
   .flex {
     justify-content: space-between;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
   .btn02 {
     width: 29.4rem;
@@ -213,6 +337,9 @@ top
     font-weight: 700;
     padding-top: 1rem;
     transition: all .3s;
+    @include c.mq() {
+      margin: 0 auto;
+    }
     &::before {
       width: 30rem;
       aspect-ratio: 1/.33;

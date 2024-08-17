@@ -3,11 +3,18 @@
         <div class="inner flex">
 
             <div class="column column01">
-              <div class="logo img-box"><a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo03.svg" alt=""></a></div>
-              <a href="<?php echo home_url('/my-account'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-login.svg" alt=""><?php if ( is_user_logged_in() ) : ?>マイページ<?php else : ?>ログイン<?php endif; ?></a>
-              <a href="<?php echo home_url('/cart'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-cart.svg" alt="">カート</a>
+              <div class="logo img-box">
+                <a href="<?php echo home_url('/'); ?>">
+                  <picture>
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/images/logo02.svg" media="(max-width: 769px)">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo03.svg" alt="">
+                  </picture>
+                </a>
+              </div><!-- /.logo -->
+              <a class="u-pc" href="<?php echo home_url('/my-account'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-login.svg" alt=""><?php if ( is_user_logged_in() ) : ?>マイページ<?php else : ?>ログイン<?php endif; ?></a>
+              <a class="u-pc" href="<?php echo home_url('/cart'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-cart.svg" alt="">カート</a>
             </div><!-- /.column-->
-            <div class="column column02">
+            <div class="column column02 u-pc">
               <nav>
                 <ul>
                   <li><a href="<?php echo home_url('/'); ?>">TOP</a></li>
@@ -30,6 +37,24 @@
                 </ul>
               </nav>
             </div><!-- /.column-->
+            <div class="u-sp">
+              <div class="column column02">
+                <nav>
+                  <ul>
+                    <li><a href="<?php echo home_url('/'); ?>">TOP</a></li>
+                    <li><a href="<?php echo home_url('/'); ?>/about/">アワセそばについて</a></li>
+                    <li><a href="<?php echo home_url('/'); ?>/shop/">商品一覧</a></li>
+                    <li><a href="<?php echo home_url('/'); ?>/faq/">よくあるご質問</a></li>
+                  </ul>
+                </nav>
+                <nav>
+                  <ul>
+                    <li><a href="<?php echo home_url('/my-account'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-login.svg" alt=""><?php if ( is_user_logged_in() ) : ?>マイページ<?php else : ?>ログイン<?php endif; ?></a></li>
+                    <li><a href="<?php echo home_url('/cart'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-cart.svg" alt="">カート</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.column-->
+            </div>
             <div class="column column03">
               <div class="btn-wrap"><a class="btn01" href="<?php echo home_url('/'); ?>/contact/"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-mail.svg" alt="">お問い合わせ</a></div>
               <nav class="navi-bottom">
