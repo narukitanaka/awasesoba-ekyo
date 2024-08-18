@@ -93,7 +93,7 @@
                       <?php if ( is_user_logged_in() ) : ?>
                         <button type="submit" class="btn01">カートに入れる</button>
                       <?php else : ?>
-                        <p style="color: #f00;">ログイン後にご注文が可能になります</p>
+                        <p style="color: #f00; margin-bottom: 1rem;">ログイン後にご注文が可能になります</p>
                         <button type="submit" class="btn01" style="opacity: .7; pointer-events: none; ">カートに入れる</button>
                       <?php endif; ?>
                     </div>
@@ -176,7 +176,7 @@
                     <?php endif; ?>
                     <?php if ($product_size): ?>
                       <tr>
-                        <th>1個サイズ(入数)<br>／寸法</th>
+                        <th>1個サイズ(入数)<br class="u-pc">／寸法</th>
                         <td><?php echo esc_html($product_size); ?></td>
                       </tr>
                     <?php endif; ?>

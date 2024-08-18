@@ -67,8 +67,10 @@
 
             <div class="top-message fadeIn">
               <p>当店は、会員登録制の<br class="u-sp">通販サイトです<br><span>会員登録後に購入が<br class="u-sp">可能となります</span></p>
-              <div class="ashirai01 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-1.svg" alt=""></div>
-              <div class="ashirai02 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-2.svg" alt=""></div>
+              <div class="ashirai01 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-1-a.svg" alt=""></div>
+              <div class="ashirai02 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-2-a.svg" alt=""></div>
+              <div class="ashirai03 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-1-b.svg" alt=""></div>
+              <div class="ashirai04 img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai01-2-b.svg" alt=""></div>
             </div><!-- /.top-message -->
 
             <div class="top-cate">

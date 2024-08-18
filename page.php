@@ -1,6 +1,6 @@
 <?php get_header(); ?>
   <main>
-    <div class="content-wrap">
+    <div class="content-wrap <?php if ( !is_home() && !is_front_page() ) : ?>p-under<?php endif; ?>">
       <div class="page-common-asshirai"><div class="img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai03.svg" alt=""></div></div>
       <div class="inner content-flex">
 

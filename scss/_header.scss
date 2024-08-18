@@ -30,8 +30,17 @@ header {
     -webkit-transform: translateY(-150%);
     transform: translateY(-150%);
     border-bottom: 2px solid v.$main-txt;
+    @include c.mq() {
+      border-bottom: 1px solid v.$main-txt;
+    }
   }
   &.header--fix {
+    border-bottom: 2px solid v.$main-txt;
+    @include c.mq() {
+      border-bottom: 1px solid v.$main-txt;
+    }
+  }
+  &.border-b {
     border-bottom: 2px solid v.$main-txt;
     @include c.mq() {
       border-bottom: 1px solid v.$main-txt;

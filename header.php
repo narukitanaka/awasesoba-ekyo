@@ -30,7 +30,7 @@
 
   <div class="wrap-hidden">
 
-    <header id="header" class="header">
+    <header id="header" class="header <?php if ( !is_home() && !is_front_page() ) : ?>border-b<?php endif; ?>">
     <div class="head-message"><p>完全会員制　沖縄そば「アワセそば」通販サイト</p></div>
       <div class="header-inner inner">
         <div class="header-top">
@@ -108,14 +108,15 @@
               <li><a href="<?php echo home_url('/'); ?>">TOP</a></li>
               <li><a href="<?php echo home_url('/'); ?>/about/">アワセそばについて</a></li>
               <li><a href="<?php echo home_url('/'); ?>/shop/">商品一覧</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/guide/">ご利用案内</a></li>
               <li><a href="<?php echo home_url('/'); ?>/faq/">よくあるご質問</a></li>
             </ul>
           </nav>
           <nav>
             <ul class="nav02">
-              <li><a href="/pages/company/">会社概要</a></li>
-              <li><a href="/pages/term/">特定商取引法に基づく表記</a></li>
-              <li><a href="/pages/policy/">プライバシーポリシー</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/company/">会社概要</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/term/">特定商取引法に基づく表記</a></li>
+              <li><a href="<?php echo home_url('/'); ?>/policy/">プライバシーポリシー</a></li>
             </ul>
           </nav>
         </div><!-- /.column-->

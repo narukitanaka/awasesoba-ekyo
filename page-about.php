@@ -3,7 +3,7 @@
 
   <div class="flow-btn"><a href="#"></a></div>
 
-  <div class="content-wrap p-under">
+  <div class="content-wrap p-under p-about">
     <div class="page-common-asshirai"><div class="img-box"><img src="<?php echo get_template_directory_uri(); ?>/images/ashirai03.svg" alt=""></div></div>
     <div class="inner content-flex">
 
