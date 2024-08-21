@@ -16,7 +16,11 @@
           <picture>
             <source srcset="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" media="(max-width: 769px)">
             <img src="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" alt="">
-            <h1>商品一覧</h1>
+            <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+              <h1>商品一覧</h1>
+            <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+              <h1>Product List</h1>
+            <?php endif; ?>
           </picture>
         </div>
       </div><!-- /.under-mv -->
@@ -24,43 +28,83 @@
       <section class="p-produt-list_wrap">
 
         <div class="cate-list">
-          <ul class="flex">
-            <li>
-              <a href="<?php echo home_url('/'); ?>/shop/">
-                全ての商品
-                <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate01.svg" alt="">
-                <div class="arrow"></div>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo home_url('/'); ?>/product-category/fresh-noodles/">
-                生麺
-                <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate02.svg" alt="">
-                <div class="arrow"></div>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo home_url('/'); ?>/product-category/dried-noodles/">
-                乾麺
-                <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate03.svg" alt="">
-                <div class="arrow"></div>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo home_url('/'); ?>/product-category/ll-noodles/">
-                LL麺
-                <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate04.svg" alt="">
-                <div class="arrow"></div>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo home_url('/'); ?>/product-category/broth/">
-                だし
-                <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate05.svg" alt="">
-                <div class="arrow"></div>
-              </a>
-            </li>
-          </ul>
+          <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+            <ul class="flex">
+              <li>
+                <a href="<?php echo home_url('/'); ?>/shop/">
+                  全ての商品
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate01.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/fresh-noodles/">
+                  生麺
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate02.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/dried-noodles/">
+                  乾麺
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate03.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/ll-noodles/">
+                  LL麺
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate04.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/broth/">
+                  だし
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate05.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+            </ul>
+          <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+            <ul class="flex">
+              <li>
+                <a href="<?php echo home_url('/'); ?>shop/">
+                  All Products
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate01.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/fresh-noodles-en">
+                  Fresh-Noodles
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate02.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/dried-noodles-en">
+                  Dried-Noodles
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate03.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/ll-noodles-en">
+                  LL-Noodles
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate04.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo home_url('/'); ?>/product-category/broth-en">
+                  Broth
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/icon-cate05.svg" alt="">
+                  <div class="arrow"></div>
+                </a>
+              </li>
+            </ul>
+          <?php endif; ?>
         </div><!-- /.cate-list -->
 
         <?php
@@ -94,7 +138,11 @@
           </div><!-- /.product-list -->
           <?php wp_reset_postdata(); ?>
         <?php else : ?>
+          <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
             <p>商品が見つかりませんでした。</p>
+          <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+            <p>Item not found.</p>
+          <?php endif; ?>
         <?php endif; ?>
 
       </section><!-- /.p-produt-list_wrap -->

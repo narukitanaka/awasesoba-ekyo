@@ -91,62 +91,123 @@
                     <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>">
                     <div class="cart-btn-wrapper">
                       <?php if ( is_user_logged_in() ) : ?>
-                        <button type="submit" class="btn01">カートに入れる</button>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <button type="submit" class="btn01">カートに入れる</button>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <button type="submit" class="btn01">Add Cart</button>
+                        <?php endif; ?>
                       <?php else : ?>
-                        <p style="color: #f00; margin-bottom: 1rem;">ログイン後にご注文が可能になります</p>
-                        <button type="submit" class="btn01" style="opacity: .7; pointer-events: none; ">カートに入れる</button>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <p style="color: #f00; margin-bottom: 1rem;">ログイン後にご注文が可能になります</p>
+                          <button type="submit" class="btn01" style="opacity: .7; pointer-events: none; ">カートに入れる</button>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <p style="color: #f00; margin-bottom: 1rem;">You will be able to place your order after logging in</p>
+                          <button type="submit" class="btn01" style="opacity: .7; pointer-events: none; ">Add Cart</button>
+                        <?php endif; ?>
                       <?php endif; ?>
                     </div>
                   </form>
                 </div>
-                <script>
-                  document.addEventListener('DOMContentLoaded', function() {
-                    var quantityInput = document.getElementById('quantity');
-                    var minusButton = document.getElementById('minus');
-                    var plusButton = document.getElementById('plus');
-                    var addToCartForm = document.getElementById('add-to-cart-form');
 
-                    minusButton.addEventListener('click', function() {
-                      var currentVal = parseInt(quantityInput.value, 10);
-                      if (currentVal > 1) {
-                        quantityInput.value = currentVal - 1;
-                      }
-                    });
+                <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      var quantityInput = document.getElementById('quantity');
+                      var minusButton = document.getElementById('minus');
+                      var plusButton = document.getElementById('plus');
+                      var addToCartForm = document.getElementById('add-to-cart-form');
 
-                    plusButton.addEventListener('click', function() {
-                      var currentVal = parseInt(quantityInput.value, 10);
-                      quantityInput.value = currentVal + 1;
-                    });
-
-                    addToCartForm.addEventListener('submit', function(event) {
-                      event.preventDefault();
-
-                      var formData = new FormData(addToCartForm);
-                      formData.append('action', 'woocommerce_add_to_cart');
-
-                      fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
-                        method: 'POST',
-                        body: formData,
-                        credentials: 'same-origin'
-                      })
-                      .then(response => response.json())
-                      .then(data => {
-                        if (data.error && data.product_url) {
-                          window.location = data.product_url;
-                          return;
+                      minusButton.addEventListener('click', function() {
+                        var currentVal = parseInt(quantityInput.value, 10);
+                        if (currentVal > 1) {
+                          quantityInput.value = currentVal - 1;
                         }
+                      });
 
-                        // カートに商品が正常に追加された場合の処理
-                        alert('商品がカートに追加されました');
-                        // カートの内容を更新する（必要に応じて）
-                        // location.reload(); // ページをリロードする場合
-                      })
-                      .catch(error => {
-                        console.error('Error:', error);
+                      plusButton.addEventListener('click', function() {
+                        var currentVal = parseInt(quantityInput.value, 10);
+                        quantityInput.value = currentVal + 1;
+                      });
+
+                      addToCartForm.addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        var formData = new FormData(addToCartForm);
+                        formData.append('action', 'woocommerce_add_to_cart');
+
+                        fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                          method: 'POST',
+                          body: formData,
+                          credentials: 'same-origin'
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                          if (data.error && data.product_url) {
+                            window.location = data.product_url;
+                            return;
+                          }
+
+                          // カートに商品が正常に追加された場合の処理
+                          alert('商品がカートに追加されました');
+                          // カートの内容を更新する（必要に応じて）
+                          // location.reload(); // ページをリロードする場合
+                        })
+                        .catch(error => {
+                          console.error('Error:', error);
+                        });
                       });
                     });
-                  });
-                </script>
+                  </script>
+                <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      var quantityInput = document.getElementById('quantity');
+                      var minusButton = document.getElementById('minus');
+                      var plusButton = document.getElementById('plus');
+                      var addToCartForm = document.getElementById('add-to-cart-form');
+
+                      minusButton.addEventListener('click', function() {
+                        var currentVal = parseInt(quantityInput.value, 10);
+                        if (currentVal > 1) {
+                          quantityInput.value = currentVal - 1;
+                        }
+                      });
+
+                      plusButton.addEventListener('click', function() {
+                        var currentVal = parseInt(quantityInput.value, 10);
+                        quantityInput.value = currentVal + 1;
+                      });
+
+                      addToCartForm.addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        var formData = new FormData(addToCartForm);
+                        formData.append('action', 'woocommerce_add_to_cart');
+
+                        fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                          method: 'POST',
+                          body: formData,
+                          credentials: 'same-origin'
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                          if (data.error && data.product_url) {
+                            window.location = data.product_url;
+                            return;
+                          }
+
+                          // カートに商品が正常に追加された場合の処理
+                          alert('Product added to cart');
+                          // カートの内容を更新する（必要に応じて）
+                          // location.reload(); // ページをリロードする場合
+                        })
+                        .catch(error => {
+                          console.error('Error:', error);
+                        });
+                      });
+                    });
+                  </script>
+                <?php endif; ?>
 
   
                 <p class="txt">
@@ -170,49 +231,81 @@
                   <table>
                     <?php if ($product_number): ?>
                       <tr>
-                        <th>商品管理番号</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>商品管理番号</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Product Number</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_number); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_size): ?>
                       <tr>
-                        <th>1個サイズ(入数)<br class="u-pc">／寸法</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>1個サイズ(入数)<br class="u-pc">／寸法</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>1 piece size (Qty)<br class="u-pc">／Dimensions</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_size); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_unit): ?>
                       <tr>
-                        <th>注文単位</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>注文単位</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Ordering Unit</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_unit); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_case_size): ?>
                       <tr>
-                        <th>ケースサイズ／<br>荷姿サイズ(mm)</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>ケースサイズ／<br>荷姿サイズ(mm)</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Case Size／<br>Package Size(mm)</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_case_size); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_material): ?>
                       <tr>
-                        <th>原材料名</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>原材料名</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Ingredient Name</th>
+                        <?php endif; ?>
                         <td><?php echo nl2br(esc_html($product_material)); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_allergy): ?>
                       <tr>
-                        <th>アレルギー</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>アレルギー</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Allergy</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_allergy); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_best_before): ?>
                       <tr>
-                        <th>賞味期限</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>賞味期限</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>Expiration Date</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_best_before); ?></td>
                       </tr>
                     <?php endif; ?>
                     <?php if ($product_preservation): ?>
                       <tr>
-                        <th>保存方法</th>
+                        <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                          <th>保存方法</th>
+                        <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                          <th>How to Save</th>
+                        <?php endif; ?>
                         <td><?php echo esc_html($product_preservation); ?></td>
                       </tr>
                     <?php endif; ?>
@@ -227,7 +320,11 @@
 
         <div class="product-recommend">
           <div class="head-ttl">
-            <h2>こちらもおすすめ</h2>
+            <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+              <h2>こちらもおすすめ</h2>
+            <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+              <h2>Recommed</h2>
+            <?php endif; ?>
           </div>
 
           <div class="recommend_swiper">

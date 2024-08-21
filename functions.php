@@ -59,3 +59,20 @@ function custom_add_to_cart() {
 }
 add_action('wp_ajax_woocommerce_add_to_cart', 'custom_add_to_cart');
 add_action('wp_ajax_nopriv_woocommerce_add_to_cart', 'custom_add_to_cart');
+
+
+
+function search_filter($query) {
+  if ($query->is_search && !is_admin()) {
+      $query->set('post_type', 'product');
+  }
+  return $query;
+}
+add_filter('pre_get_posts', 'search_filter');
+
+
+// WooCommerceサポート宣言
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+  add_theme_support( 'woocommerce' );
+}

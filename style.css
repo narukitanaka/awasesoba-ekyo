@@ -749,10 +749,20 @@ header .header-top .colum03 ul li a img {
     width: 5.1282051282vw;
   }
 }
-header .header-top .colum03 .lang-btn {
-  background-color: #3E1900;
-  color: #fff;
-  padding: 2rem 1rem;
+header .header-top .colum03 .lang-btn .wpml-ls-display {
+  display: none;
+}
+header .header-top .colum03 .lang-btn ul {
+  gap: 1rem;
+}
+header .header-top .colum03 .lang-btn ul li {
+  border-right: 1px solid #3E1900;
+}
+header .header-top .colum03 .lang-btn ul li:last-of-type {
+  border-right: none;
+}
+header .header-top .colum03 .lang-btn a {
+  font-size: 1.4rem;
 }
 header .header-bottom {
   padding-bottom: 2.7rem;
@@ -767,7 +777,7 @@ header .header-bottom nav ul {
   justify-content: space-between;
 }
 header .header-bottom nav ul li {
-  width: 16.6666666667%;
+  width: 20%;
   border-right: 1px solid #3E1900;
 }
 header .header-bottom nav ul li a {
@@ -1002,6 +1012,22 @@ header .header-bottom nav ul li a:hover {
 }
 .mega-menu .column02 .btn-wrap .btn01::after {
   display: none;
+}
+.mega-menu .lang-btn .wpml-ls-display {
+  display: none;
+}
+.mega-menu .lang-btn ul {
+  gap: 1rem;
+}
+.mega-menu .lang-btn ul li {
+  border-right: 1px solid #3E1900;
+}
+.mega-menu .lang-btn ul li:last-of-type {
+  border-right: none;
+}
+.mega-menu .lang-btn a {
+  font-size: 1.4rem;
+  padding: 0 1rem;
 }
 
 /*************************************************

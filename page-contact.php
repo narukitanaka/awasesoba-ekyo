@@ -19,7 +19,11 @@
             <picture>
               <source srcset="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" media="(max-width: 769px)">
               <img src="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" alt="">
-              <h1>お問い合わせ</h1>
+              <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+                <h1>お問い合わせ</h1>
+              <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+                <h1>Contact</h1>
+              <?php endif; ?>
             </picture>
           </div>
         </div><!-- /.under-mv -->

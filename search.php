@@ -13,7 +13,11 @@
           <picture>
             <source srcset="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" media="(max-width: 769px)">
             <img src="<?php echo get_template_directory_uri(); ?>/images/under-mv_common.jpg" alt="">
-            <h1>検索結果</h1>
+            <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+              <h1>検索結果</h1>
+            <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+              <h1>search results</h1>
+            <?php endif; ?>
           </picture>
         </div>
       </div><!-- /.under-mv -->
@@ -39,7 +43,11 @@
           </div><!-- /.product-list -->
           <?php wp_reset_postdata(); ?>
         <?php else : ?>
-          <p><?php echo sprintf( '「%s」に一致する結果は見つかりませんでした。スペルを確認するか、別の単語やフレーズを使用してください。', get_search_query() ); ?></p>
+          <?php if( ICL_LANGUAGE_CODE == 'ja' ): //日本語 ?>
+            <p><?php echo sprintf( '「%s」に一致する結果は見つかりませんでした。スペルを確認するか、別の単語やフレーズを使用してください。', get_search_query() ); ?></p>
+          <?php elseif( ICL_LANGUAGE_CODE == 'en' ): //英語 ?>
+            <p><?php echo sprintf( 'No results found for「%s」.Please check spelling or use a different word or phrase.', get_search_query() ); ?></p>
+          <?php endif; ?>
         <?php endif; ?>
 
       </section><!-- /.p-produt-list_wrap -->

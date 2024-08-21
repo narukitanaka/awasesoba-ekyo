@@ -113,9 +113,22 @@ header {
         }
       }
       .lang-btn {
-        background-color: v.$main-txt;
-        color: #fff;
-        padding: 2rem 1rem;
+        // padding: 2rem 1rem;
+        .wpml-ls-display {
+          display: none;
+        }
+        ul {
+          gap: 1rem;
+          li {
+            border-right: 1px solid v.$main-txt;
+            &:last-of-type {
+              border-right: none;
+            }
+          }
+        }
+        a {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -129,7 +142,8 @@ header {
         display: flex;
         justify-content: space-between;
         li {
-          width: calc(100%/ 6);
+          // width: calc(100%/ 6);
+          width: calc(100% / 5);
           border-right: 1px solid v.$main-txt;
           a {
             display: flex;
@@ -381,6 +395,25 @@ header {
           display: none;
         }
       }
+    }
+  }
+  .lang-btn {
+    // padding: 2rem 1rem;
+    .wpml-ls-display {
+      display: none;
+    }
+    ul {
+      gap: 1rem;
+      li {
+        border-right: 1px solid v.$main-txt;
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+    }
+    a {
+      font-size: 1.4rem;
+      padding: 0 1rem;
     }
   }
 }
